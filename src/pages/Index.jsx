@@ -13,7 +13,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { DeleteIcon } from "@chakra-ui/icons";
+
 
 const Index = () => {
   const [todos, setTodos] = useState([]);
@@ -79,13 +79,13 @@ const Index = () => {
               >
                 <Text as={todo.completed ? "s" : undefined}>{todo.text}</Text>
               </Checkbox>
-              <IconButton
-                aria-label="Delete todo"
-                icon={<DeleteIcon />}
+              <Button
                 onClick={() => deleteTodo(index)}
                 colorScheme="red"
                 size="sm"
-              />
+              >
+                Delete
+              </Button>
             </ListItem>
           ))}
         </List>
